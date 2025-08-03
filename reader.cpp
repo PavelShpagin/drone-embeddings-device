@@ -5,6 +5,7 @@
 #include <thread>
 #include <filesystem>
 #include <vector>
+#include <algorithm>
 #include <cstring>
 #include <sys/socket.h>
 #include <arpa/inet.h>
