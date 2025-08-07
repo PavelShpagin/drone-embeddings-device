@@ -25,7 +25,7 @@ private:
     std::vector<std::string> stream_files;
     
     const std::string STREAM_DIR = "data/stream";
-    const std::string LOG_FILE = "data/reader.log";
+    const std::string LOG_FILE = "data/reader.txt";
     
 public:
     DeviceReader() : localizer_ready(false), current_frame_index(0) {
@@ -35,29 +35,25 @@ public:
     }
     
     void setupSockets() {
-        // Create sockets
-        init_map_sock = socket(AF_INET, SOCK_DGRAM, 0);
-        fetch_gps_sock = socket(AF_INET, SOCK_DGRAM, 0);
+        // Create TCP sockets
+        init_map_sock = socket(AF_INET, SOCK_STREAM, 0);
+        fetch_gps_sock = socket(AF_INET, SOCK_STREAM, 0);
         
         if (init_map_sock < 0 || fetch_gps_sock < 0) {
             std::cerr << "Socket creation failed" << std::endl;
             exit(1);
         }
         
-        // Set non-blocking
-        fcntl(init_map_sock, F_SETFL, O_NONBLOCK);
-        fcntl(fetch_gps_sock, F_SETFL, O_NONBLOCK);
-        
         // Setup addresses
         init_map_addr.sin_family = AF_INET;
-        init_map_addr.sin_port = htons(8001);
+        init_map_addr.sin_port = htons(18001);
         inet_pton(AF_INET, "127.0.0.1", &init_map_addr.sin_addr);
         
         fetch_gps_addr.sin_family = AF_INET;
-        fetch_gps_addr.sin_port = htons(8002);
+        fetch_gps_addr.sin_port = htons(18002);
         inet_pton(AF_INET, "127.0.0.1", &fetch_gps_addr.sin_addr);
         
-        std::cout << "Sockets configured for localizer communication" << std::endl;
+        std::cout << "TCP sockets configured for localizer communication" << std::endl;
     }
     
     void loadStreamFiles() {
@@ -87,29 +83,45 @@ public:
             "lat": 50.4162,
             "lng": 30.8906,
             "meters": 1000,
-            "mode": "device"
+            "mode": "server"
         })";
         
-        sendto(init_map_sock, request.c_str(), request.length(), 0,
-               (struct sockaddr*)&init_map_addr, sizeof(init_map_addr));
+        // Connect and send TCP request
+        if (connect(init_map_sock, (struct sockaddr*)&init_map_addr, sizeof(init_map_addr)) < 0) {
+            std::cerr << "Failed to connect to init_map server" << std::endl;
+            return;
+        }
         
-        std::cout << "Sent init_map request" << std::endl;
+        send(init_map_sock, request.c_str(), request.length(), 0);
+        std::cout << "Sent init_map request via TCP" << std::endl;
     }
     
     void checkInitMapResponse() {
         char buffer[4096];
-        ssize_t bytes = recv(init_map_sock, buffer, sizeof(buffer)-1, 0);
+        ssize_t bytes = recv(init_map_sock, buffer, sizeof(buffer)-1, MSG_DONTWAIT);
         
         if (bytes > 0) {
             buffer[bytes] = '\0';
             std::string response(buffer);
             
-            // Parse session_id from JSON response
-            size_t start = response.find("\"session_id\":\"") + 14;
-            size_t end = response.find("\"", start);
-            session_id = response.substr(start, end - start);
+            // Parse session_id from JSON response - debug print first
+            std::cout << "Raw response: " << response << std::endl;
+            
+            size_t start = response.find("\"session_id\": \"");
+            if (start != std::string::npos) {
+                start += 15;  // Length of "session_id": "
+                size_t end = response.find("\"", start);
+                if (end != std::string::npos) {
+                    session_id = response.substr(start, end - start);
+                } else {
+                    std::cout << "End quote not found" << std::endl;
+                }
+            } else {
+                std::cout << "session_id field not found" << std::endl;
+            }
             
             localizer_ready = true;
+            close(init_map_sock); // Close TCP connection
             std::cout << "Received session_id: " << session_id << std::endl;
             
             std::ofstream log(LOG_FILE, std::ios::app);
@@ -132,22 +144,35 @@ public:
             "\"image_path\":\"" + image_path + "\""
             "}";
         
-        sendto(fetch_gps_sock, request.c_str(), request.length(), 0,
-               (struct sockaddr*)&fetch_gps_addr, sizeof(fetch_gps_addr));
+        // Create new socket for each request
+        int new_sock = socket(AF_INET, SOCK_STREAM, 0);
+        if (connect(new_sock, (struct sockaddr*)&fetch_gps_addr, sizeof(fetch_gps_addr)) < 0) {
+            std::cerr << "Failed to connect to fetch_gps server" << std::endl;
+            close(new_sock);
+            return;
+        }
         
+        // Send request size first, then request
+        std::string size_str = std::to_string(request.length());
+        size_str.resize(4, ' '); // Pad to 4 bytes
+        send(new_sock, size_str.c_str(), 4, 0);
+        send(new_sock, request.c_str(), request.length(), 0);
+        
+        fetch_gps_sock = new_sock; // Store for response
         localizer_ready = false;
         std::cout << "Sent fetch_gps request for: " << image_path << std::endl;
     }
     
     void checkFetchGpsResponse() {
         char buffer[8192];
-        ssize_t bytes = recv(fetch_gps_sock, buffer, sizeof(buffer)-1, 0);
+        ssize_t bytes = recv(fetch_gps_sock, buffer, sizeof(buffer)-1, MSG_DONTWAIT);
         
         if (bytes > 0) {
             buffer[bytes] = '\0';
             std::string response(buffer);
             
             localizer_ready = true;
+            close(fetch_gps_sock); // Close TCP connection
             
             // Log GPS result
             std::ofstream log(LOG_FILE, std::ios::app);
