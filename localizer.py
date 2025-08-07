@@ -140,11 +140,9 @@ class DeviceLocalizer:
                 if session_id not in self.sessions:
                     result = {"success": False, "error": f"Session {session_id} not found"}
                 else:
-                    session_data = self.sessions[session_id]
                     result = process_fetch_gps_request(image_data, session_id, self.embedder, self.sessions)
                     
-                    # Update local session and save
-                    self.sessions[session_id] = session_data
+                    # Save updated sessions (fetch_gps automatically updates path visualization)
                     with open("data/sessions.pkl", 'wb') as f:
                         pickle.dump(self.sessions, f)
                 
