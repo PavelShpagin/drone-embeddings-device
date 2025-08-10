@@ -103,7 +103,7 @@ def _store_session_data(session_id: str, map_data: Dict[str, Any]) -> None:
     patch_objects = []
     for patch_dict in map_data.get("patches", []):
         patch_obj = PatchData(
-            embedding=np.array(patch_dict["embedding"]),
+            embedding_data={"embedding": np.array(patch_dict["embedding"])},
             lat=patch_dict["lat"],
             lng=patch_dict["lng"],
             patch_coords=tuple(patch_dict["coords"])

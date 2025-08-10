@@ -83,7 +83,7 @@ public:
             "lat": 50.4162,
             "lng": 30.8906,
             "meters": 1000,
-            "mode": "server"
+            "mode": "device"
         })";
         
         // Connect and send TCP request

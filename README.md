@@ -25,6 +25,7 @@ python localizer.py --local &
 - **Remote Server Integration**: Uses AWS server by default for map initialization
 - **Local Processing**: Fast GPS matching using cached embeddings on device
 - **Automatic Path Visualization**: Red dot path images created during GPS processing
+- **Real-time Video Generation**: Each GPS update automatically appends to MP4 time-lapse video
 - **TCP Communication**: Reliable data transfer between C++ reader and Python localizer
 - **Real-time Stream Processing**: Processes drone camera images continuously
 
@@ -47,8 +48,8 @@ python localizer.py --local &
 
 1. **Init Map**: Remote server call → Download map/embeddings → Store locally
 2. **Stream Processing**: reader.cpp reads images → Sends to localizer.py
-3. **GPS Processing**: Local fetch_gps → GPS coordinates + Path visualization
-4. **Path Updates**: Red dot images saved in `data/server_paths/`
+3. **GPS Processing**: Local fetch_gps → GPS coordinates + Path visualization + Video append
+4. **Path Updates**: Red dot images saved in `data/server_paths/`, MP4 video auto-generated in real-time
 
 ## TCP Ports
 
@@ -83,4 +84,5 @@ python localizer.py --local &
 
 - **GPS coordinates**: Written to `data/reader.txt`
 - **Path visualizations**: Saved in `data/server_paths/`
+- **Time-lapse video**: Auto-generated `data/server_paths/path_video_*.avi` (real-time appending)
 - **Session data**: Cached in `data/sessions.pkl`
