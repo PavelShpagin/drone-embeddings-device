@@ -37,8 +37,17 @@ class PathPoint:
     metadata: Optional[Dict[str, Any]] = None
 
 @dataclass
+class SessionMetadata:
+    """Lightweight session metadata with file references."""
+    session_id: str
+    created_at: float
+    map_path: str  # Path to satellite image PNG
+    embeddings_path: str  # Path to embeddings JSON
+    zip_path: str  # Path to packaged zip file
+
+@dataclass
 class SessionData:
-    """Complete session data for a map region."""
+    """Complete session data for a map region (legacy - for backward compatibility)."""
     session_id: str
     full_map: np.ndarray  # Full stitched map as numpy array
     map_bounds: Dict[str, float]  # {"min_lat", "max_lat", "min_lng", "max_lng"}
@@ -46,7 +55,8 @@ class SessionData:
     patches: List[PatchData]  # All patches with embeddings and GPS
     created_at: float
     meters_coverage: int
-    path_data: List[PathPoint] = field(default_factory=list)  # GPS tracking path data
+    path_data: List[PathPoint] = field(default_factory=list)  # Predicted GPS tracking path
+    gt_path_data: List[PathPoint] = field(default_factory=list)  # Ground-truth GPS path
     path_image_file: Optional[str] = None  # Incremental path visualization image
 
 
@@ -56,6 +66,8 @@ class InitMapRequest(BaseModel):
     lng: float
     meters: int = 2000
     mode: str = "server"
+    compressed: Optional[bool] = False
+    session_id: Optional[str] = None  # For caching
 
 
 class HealthResponse(BaseModel):
@@ -80,6 +92,8 @@ class SessionsResponse(BaseModel):
 
 class FetchGpsRequest(BaseModel):
     session_id: str
+    logging_id: Optional[str] = None  # For enhanced logging
+    visualization: Optional[bool] = False  # Enable visualization updates
 
 
 class FetchGpsResponse(BaseModel):

@@ -11,6 +11,7 @@ import socket
 import threading
 import base64
 import argparse
+import uuid
 from pathlib import Path
 
 # Add device src to path for code reuse
@@ -28,8 +29,10 @@ class DeviceLocalizer:
     def __init__(self, server_url="http://ec2-16-171-238-14.eu-north-1.compute.amazonaws.com:5000"):
         self.server_url = server_url
         self.sessions = {}
+        self.logger_id = str(uuid.uuid4())  # Generate logger_id for this localizer session
         self._load_sessions()
         self.running = True
+        print(f"Device localizer starting with logger_id: {self.logger_id}")
         
         # Import embedder from server path (only needed for fetch_gps processing) 
         sys.path.append('/home/pavel/dev/drone-embeddings/server/src')
@@ -78,7 +81,7 @@ class DeviceLocalizer:
                 print(f"init_map connection from {addr}")
                 
                 # Receive request
-                data = conn.recv(4096).decode()
+                data = conn.recv(4096).decode(errors='ignore')
                 request = json.loads(data)
                 print(f"Received init_map request: {request}")
                 
@@ -93,8 +96,13 @@ class DeviceLocalizer:
                 # Reload sessions after storing
                 self._load_sessions()
                 
-                # Send response
-                response = json.dumps(result)
+                # Send MINIMAL response to the reader to avoid huge TCP payloads
+                # Only session_id and success are needed by the reader
+                minimal = {
+                    'success': bool(result.get('success', False)),
+                    'session_id': result.get('session_id')
+                }
+                response = json.dumps(minimal)
                 conn.send(response.encode())
                 conn.close()
                 print(f"Sent init_map response to {addr}")
@@ -135,16 +143,19 @@ class DeviceLocalizer:
                 with open(image_path, 'rb') as f:
                     image_data = f.read()
                 
-                # Process request using local session data
+                # Extract parameters
                 session_id = request['session_id']
-                if session_id not in self.sessions:
-                    result = {"success": False, "error": f"Session {session_id} not found"}
-                else:
-                    result = process_fetch_gps_request(image_data, session_id, self.embedder, self.sessions)
-                    
-                    # Save updated sessions (fetch_gps automatically updates path visualization)
-                    with open("data/sessions.pkl", 'wb') as f:
-                        pickle.dump(self.sessions, f)
+                logging_id = request.get('logging_id')
+                visualization = request.get('visualization', False)
+                
+                # Process request using new file-based system with localizer's logger_id
+                result = process_fetch_gps_request(
+                    image_data,
+                    session_id,
+                    self.embedder,
+                    logging_id=self.logger_id,  # Use localizer's logger_id
+                    visualization=True  # Always enable visualization for enhanced logging
+                )
                 
                 # Send response
                 response = json.dumps(result, default=str)

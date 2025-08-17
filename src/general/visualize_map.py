@@ -136,7 +136,7 @@ def image_to_bytes(image: Image.Image, output_path: Optional[str] = None) -> byt
     return img_buffer.getvalue()
 
 
-def update_path_visualization(session_data, new_lat: float, new_lng: float) -> str:
+def update_path_visualization(session_data, new_lat: float, new_lng: float, g_lat: Optional[float] = None, g_lon: Optional[float] = None) -> str:
     """
     Update path visualization with a new GPS point and save to server_paths.
     
@@ -161,7 +161,7 @@ def update_path_visualization(session_data, new_lat: float, new_lng: float) -> s
     # Convert new GPS to pixel coordinates
     new_x, new_y = gps_to_pixel_coords(new_lat, new_lng, viz_img.size, session_data.map_bounds)
     
-    # Draw line from previous point if exists
+    # Draw line from previous predicted point if exists
     if len(session_data.path_data) > 0:
         prev_point = session_data.path_data[-1]
         prev_x, prev_y = gps_to_pixel_coords(prev_point.lat, prev_point.lng, viz_img.size, session_data.map_bounds)
@@ -169,16 +169,28 @@ def update_path_visualization(session_data, new_lat: float, new_lng: float) -> s
         # Draw thin pure red line
         draw.line([(prev_x, prev_y), (new_x, new_y)], fill=(255, 0, 0), width=2)
     
-    # Draw large red dot (5x5 pixels minimum)
+    # Draw large red dot (predicted)
     dot_size = max(5, min(viz_img.width, viz_img.height) // 100)
     draw.ellipse([new_x - dot_size, new_y - dot_size, new_x + dot_size, new_y + dot_size], 
                 fill=(255, 0, 0), outline=(255, 255, 255), width=2)
+
+    # Draw ground-truth path if provided (g_lat/g_lon)
+    if g_lat is not None and g_lon is not None:
+        gt_x, gt_y = gps_to_pixel_coords(g_lat, g_lon, viz_img.size, session_data.map_bounds)
+        # Line from previous GT point
+        if hasattr(session_data, 'gt_path_data') and len(session_data.gt_path_data) > 0:
+            prev_gt = session_data.gt_path_data[-1]
+            prev_gt_x, prev_gt_y = gps_to_pixel_coords(prev_gt.lat, prev_gt.lng, viz_img.size, session_data.map_bounds)
+            draw.line([(prev_gt_x, prev_gt_y), (gt_x, gt_y)], fill=(0, 200, 0), width=2)
+        # GT dot
+        draw.ellipse([gt_x - dot_size, gt_y - dot_size, gt_x + dot_size, gt_y + dot_size], 
+                     fill=(0, 200, 0), outline=(255, 255, 255), width=2)
     
     # Save to server_paths
     server_paths_dir = Path("data/server_paths")
     server_paths_dir.mkdir(parents=True, exist_ok=True)
     
-    image_path = server_paths_dir / f"path_{session_data.session_id[:8]}.jpg"
+    image_path = server_paths_dir / f"path_{session_data.session_id}.jpg"
     viz_img.save(image_path, 'JPEG', quality=95)
     
     # Append frame to video for real-time time-lapse (if enabled)
@@ -195,7 +207,7 @@ def _append_video_frame(viz_img: Image.Image, session_id: str, server_paths_dir:
     try:
         import numpy as np
         
-        session_key = session_id[:8]
+        session_key = session_id
         
         # Initialize frame buffer for session
         if session_key not in _frame_buffers:
@@ -265,7 +277,7 @@ def _generate_video_from_buffer(session_key: str, server_paths_dir: Path) -> Non
 
 def finalize_session_video(session_id: str) -> None:
     """Finalize video generation for a session."""
-    session_key = session_id[:8]
+    session_key = session_id
     
     # Generate final video from all buffered frames
     if session_key in _frame_buffers:
@@ -285,7 +297,7 @@ def finalize_session_video(session_id: str) -> None:
 
 def _save_individual_frame(viz_img: Image.Image, session_id: str, server_paths_dir: Path) -> None:
     """Fallback: Save individual frame (for when OpenCV not available)."""
-    frames_dir = server_paths_dir / f"frames_{session_id[:8]}"
+    frames_dir = server_paths_dir / f"frames_{session_id}"
     frames_dir.mkdir(exist_ok=True)
     
     frame_files = list(frames_dir.glob("frame_*.jpg"))
@@ -303,7 +315,7 @@ def _save_individual_frame(viz_img: Image.Image, session_id: str, server_paths_d
 
 def get_session_video_path(session_id: str, server_paths_dir: Path) -> str:
     """Get path to real-time generated video file."""
-    video_path = server_paths_dir / f"path_video_{session_id[:8]}.avi"
+    video_path = server_paths_dir / f"path_video_{session_id}.avi"
     
     # Finalize video if still being written
     finalize_session_video(session_id)

@@ -1,6 +1,6 @@
-# Drone Device Client
+# Drone Device Client - New Architecture
 
-Real-time GPS localization client for drone devices.
+Real-time GPS localization client with enhanced logging and zip-based session management.
 
 ## Quick Start
 
@@ -9,7 +9,7 @@ Real-time GPS localization client for drone devices.
 ```bash
 cd device
 python localizer.py &
-./reader
+./reader --lat 50.4162 --lng 30.8906 --meters 1000
 ```
 
 ### Connect to Local Server
@@ -17,17 +17,34 @@ python localizer.py &
 ```bash
 cd device
 python localizer.py --local &
-./reader
+./reader --lat 50.4162 --lng 30.8906 --meters 1000
 ```
 
-## Key Features
+## New Architecture Features
 
-- **Remote Server Integration**: Uses AWS server by default for map initialization
-- **Local Processing**: Fast GPS matching using cached embeddings on device
-- **Automatic Path Visualization**: Red dot path images created during GPS processing
-- **Real-time Video Generation**: Each GPS update automatically appends to MP4 time-lapse video
-- **TCP Communication**: Reliable data transfer between C++ reader and Python localizer
-- **Real-time Stream Processing**: Processes drone camera images continuously
+### 🔄 **Session Caching**
+
+- Server-side session caching via session_id
+- Zip-based map/embeddings distribution
+- Instant cached retrieval for repeat locations
+
+### 📊 **Enhanced Logging**
+
+- Automatic logger_id generation per localizer session
+- Real-time CSV tracking: ground truth vs predicted GPS
+- Error analysis with 50-frame rolling averages
+- Map visualizations with prediction paths
+
+### 📦 **Zip Downloads**
+
+- Atomic map + embeddings download as ZIP
+- Local unpacking to `data/maps/` and `data/embeddings/`
+- Efficient network transfer and storage
+
+### 🗃️ **File-based Storage**
+
+- Lightweight `sessions.pkl` with metadata only
+- Organized directory structure per session/logger
 
 ## Architecture
 
@@ -35,54 +52,147 @@ python localizer.py --local &
 ┌─────────────┐    TCP     ┌─────────────────┐    HTTP    ┌──────────────┐
 │ reader.cpp  │────────────│ localizer.py    │────────────│ Remote Server│
 │ (C++ client)│ 18001-3    │ (Python adapter)│     5000   │ (AWS/Local)  │
+│ logger_id   │            │ file-based      │            │ zip response │
 └─────────────┘            └─────────────────┘            └──────────────┘
        │                           │                              │
-       │ Image Stream              │ Local Cache                  │ Map Data
+       │ Image Stream              │ Local Cache                  │ Zip Downloads
        ▼                           ▼                              ▼
 ┌─────────────┐            ┌─────────────────┐            ┌──────────────┐
-│data/stream/ │            │data/sessions.pkl│            │Satellite Maps│
+│data/stream/ │            │data/            │            │ New Sessions │
+│             │            │├─maps/*.png     │            │ ├─maps/      │
+│             │            │├─embeddings/*.j │            │ ├─embeddings/│
+│             │            │├─logs/*/        │            │ └─zips/      │
+│             │            │└─sessions.pkl   │            │              │
 └─────────────┘            └─────────────────┘            └──────────────┘
 ```
 
-## Data Flow
+## Enhanced Data Flow
 
-1. **Init Map**: Remote server call → Download map/embeddings → Store locally
-2. **Stream Processing**: reader.cpp reads images → Sends to localizer.py
-3. **GPS Processing**: Local fetch_gps → GPS coordinates + Path visualization + Video append
-4. **Path Updates**: Red dot images saved in `data/server_paths/`, MP4 video auto-generated in real-time
+### Session Initialization
 
-## TCP Ports
+1. **Localizer Start**: Generates random 8-char logger_id per session
+2. **Init Map**: TCP → localizer → HTTP server call
+3. **Zip Download**: Server returns compressed map + embeddings
+4. **Local Storage**: Unpack to `data/maps/`, `data/embeddings/`
+5. **Session Cache**: Lightweight metadata in `sessions.pkl`
 
-- **18001**: init_map requests
-- **18002**: fetch_gps requests
-- **18003**: visualize_path requests
+### GPS Processing with Logging
+
+1. **Image Read**: reader.cpp loads next image from stream
+2. **Enhanced Request**: Includes `session_id`, `logger_id`, `visualization=true`
+3. **Local Processing**: File-based fetch_gps with enhanced logging
+4. **Log Generation**: Real-time CSV, error plots, map visualization
+5. **Result**: GPS coordinates + comprehensive tracking data
+
+## New Request Features
+
+### Reader Parameters
+
+```bash
+./reader --lat 50.4162 --lng 30.8906 --meters 1000
+# logger_id automatically generated by localizer (e.g., "a3f4b2e1")
+```
+
+### Enhanced fetch_gps
+
+- Uses localizer's `logger_id` and `visualization=true` automatically
+- Creates session/logger directory structure
+- Real-time error tracking and visualization
+
+## File Structure
+
+```
+data/
+├── sessions.pkl              # Lightweight session metadata
+├── maps/                     # Satellite images
+│   └── {session_id}.png
+├── embeddings/               # Patch embeddings + metadata
+│   └── {session_id}.json
+├── logs/                     # Enhanced logging per session/logger
+│   └── {session_id}/
+│       └── {logger_id}/
+│           ├── path.csv      # Ground truth vs predicted GPS
+│           ├── error_plot.png# Error over time + 50-frame avg
+│           └── map_paths.png # Visual path overlay
+├── server_paths/             # Legacy path visualizations
+└── stream/                   # Input image stream
+    ├── 00000000.jpg
+    ├── 00000001.jpg
+    └── ...
+```
+
+## TCP Communication
+
+- **Port 18001**: init_map (session creation/caching)
+- **Port 18002**: fetch_gps (enhanced with logging)
+- **Port 18003**: visualize_path (legacy)
+
+New request format includes:
+
+```json
+{
+  "session_id": "uuid",
+  "image_path": "data/stream/00000123.jpg",
+  "logging_id": "a3f4b2e1",
+  "visualization": true
+}
+```
 
 ## Requirements
 
-- Python 3.9+ with torch, numpy, PIL
-- C++ compiler (g++)
-- Network access to remote server
-- CUDA-capable GPU (recommended)
+```bash
+# Core dependencies
+pip install torch torchvision numpy pillow requests
+
+# Enhanced logging
+pip install matplotlib pandas
+
+# Development
+pip install opencv-python
+```
 
 ## Build & Run
 
 ```bash
-# Compile C++ reader
-g++ -o reader reader.cpp
+# Compile C++ reader with new logger_id support
+g++ -o reader reader.cpp -std=c++17
 
-# Start localizer (remote server default)
-python localizer.py &
-
-# Or use local server
+# Start localizer (with file-based processing)
 python localizer.py --local &
 
-# Run reader
-./reader
+# Run reader with parameters
+./reader --lat 50.4162 --lng 30.8906 --meters 1000
 ```
 
-## Output
+## Enhanced Output
 
-- **GPS coordinates**: Written to `data/reader.txt`
-- **Path visualizations**: Saved in `data/server_paths/`
-- **Time-lapse video**: Auto-generated `data/server_paths/path_video_*.avi` (real-time appending)
-- **Session data**: Cached in `data/sessions.pkl`
+### Real-time Logs
+
+- **GPS tracking**: `data/logs/{session_id}/{logger_id}/path.csv`
+- **Error analysis**: `data/logs/{session_id}/{logger_id}/error_plot.png`
+- **Path visualization**: `data/logs/{session_id}/{logger_id}/map_paths.png`
+
+### Session Data
+
+- **Maps**: `data/maps/{session_id}.png`
+- **Embeddings**: `data/embeddings/{session_id}.json`
+- **Metadata**: `data/sessions.pkl` (lightweight)
+
+### Legacy Output (still available)
+
+- **GPS coordinates**: `data/reader.txt`
+- **Path visualizations**: `data/server_paths/`
+
+## Performance
+
+- **Cold start**: ~20-30s (server zip download + processing)
+- **Cached session**: ~200ms (local file access)
+- **GPS processing**: ~100-300ms (local embedding matching)
+- **Enhanced logging**: Real-time CSV + plots with minimal overhead
+
+## Migration Notes
+
+- Backward compatible with existing stream data
+- New logging is opt-in via `visualization=true`
+- Legacy endpoints still functional
+- Enhanced error tracking provides much better debugging
