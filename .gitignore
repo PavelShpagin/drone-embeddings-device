@@ -1,3 +1,8 @@
 data/stream/*
 /data
 /secrets
+venv/
+.env
+*.pyc
+__pycache__/
+.ipynb_checkpoints/

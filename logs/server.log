@@ -1,0 +1,1006 @@
+INFO:     Started server process [36139]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+Starting Drone Device Server...
+Access the web interface at: http://localhost:8888
+INFO:     127.0.0.1:35760 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:__main__:📦 Processing mission data for session mgaoxeb8
+INFO:__main__:✅ Extracted mission data from zip
+INFO:__main__:📁 Moved map.png to maps/
+INFO:__main__:📁 Moved embeddings.json to embeddings/
+INFO:__main__:✅ Mission data processed and state updated for session mgaoxeb8
+INFO:     127.0.0.1:35760 - "POST /api/process_mission_data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35760 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54490 - "POST /api/clear_state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54496 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54496 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54496 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54496 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33536 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33536 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45182 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45182 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42498 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42498 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42498 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42498 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42498 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42498 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42498 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37766 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37766 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34958 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34958 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:__main__:📦 Processing mission data for session l2ji8h8c
+INFO:__main__:✅ Extracted mission data from zip
+INFO:__main__:📁 Moved map.png to maps/
+INFO:__main__:📁 Moved embeddings.json to embeddings/
+INFO:__main__:✅ Mission data processed and state updated for session l2ji8h8c
+INFO:     127.0.0.1:33472 - "POST /api/process_mission_data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:__main__:📦 Processing mission data for session r801j6xq
+INFO:__main__:✅ Extracted mission data from zip
+INFO:__main__:📁 Moved map.png to maps/
+INFO:__main__:📁 Moved embeddings.json to embeddings/
+INFO:__main__:✅ Mission data processed and state updated for session r801j6xq
+INFO:     127.0.0.1:33472 - "POST /api/process_mission_data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33472 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38184 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36758 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59278 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55536 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55536 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39668 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39668 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47746 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47746 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43890 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43890 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43890 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43890 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43890 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43890 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43890 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43890 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43890 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50748 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:__main__:📦 Processing mission data for session imp6qyru
+INFO:__main__:✅ Extracted mission data from zip
+INFO:__main__:📁 Moved map.png to maps/
+INFO:__main__:📁 Moved embeddings.json to embeddings/
+INFO:__main__:✅ Mission data processed and state updated for session imp6qyru
+INFO:     127.0.0.1:44164 - "POST /api/process_mission_data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "POST /api/init_map HTTP/1.1" 200 OK
+INFO:__main__:🚀 Starting mission: 50.46037, 30.89884, 10.0km
+INFO:src.device.websocket_client:🔌 Connecting to WebSocket: ws://ec2-16-171-238-14.eu-north-1.compute.amazonaws.com:5000/ws/3d2af7a3-88e2-4a6f-bc47-1a166a9b3d4c
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:src.device.websocket_client:✅ WebSocket connected with ID: 3d2af7a3-88e2-4a6f-bc47-1a166a9b3d4c
+INFO:src.device.websocket_client:📤 Sending init_map request: {'type': 'init_map', 'lat': 50.46037, 'lng': 30.89884, 'meters': 10000, 'fetch_only': False}
+INFO:src.device.websocket_client:✅ Connection confirmed
+INFO:src.device.websocket_client:✅ Task started: d2c5a53d-23ef-4e5e-baf5-4e554512196f
+INFO:     127.0.0.1:44164 - "GET /api/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/progress HTTP/1.1" 200 OK
+INFO:__main__:=== WEBSOCKET ABORT INITIATED ===
+INFO:__main__:✗ No active WebSocket to abort
+INFO:     127.0.0.1:50144 - "POST /api/abort_websocket HTTP/1.1" 200 OK
+INFO:__main__:=== WEBSOCKET ABORT INITIATED ===
+INFO:__main__:✗ No active WebSocket to abort
+INFO:     127.0.0.1:44164 - "POST /api/abort_websocket HTTP/1.1" 200 OK
+INFO:__main__:=== ABORT OPERATION INITIATED ===
+INFO:__main__:✓ Set cancelled status for init_map
+INFO:__main__:=== ABORT OPERATION INITIATED ===
+INFO:src.device.websocket_client:🚫 Cancellation sent for task: d2c5a53d-23ef-4e5e-baf5-4e554512196f
+INFO:__main__:✓ Set cancelled status for init_map
+INFO:src.device.websocket_client:🚫 Cancellation sent for task: d2c5a53d-23ef-4e5e-baf5-4e554512196f
+INFO:__main__:✓ WebSocket task cancelled successfully
+INFO:__main__:Active local tasks to cancel: ['init_map']
+INFO:__main__:✓ Cancelled local task: init_map
+INFO:__main__:=== ABORT OPERATION COMPLETED ===
+INFO:     127.0.0.1:44164 - "POST /api/abort HTTP/1.1" 200 OK
+INFO:__main__:✓ WebSocket task cancelled successfully
+INFO:__main__:Active local tasks to cancel: ['init_map']
+INFO:__main__:✓ Cancelled local task: init_map
+INFO:__main__:=== ABORT OPERATION COMPLETED ===
+INFO:     127.0.0.1:50144 - "POST /api/abort HTTP/1.1" 200 OK
+INFO:__main__:✗ TRANSACTION CANCELLED: Init map task b8aef766-34bc-4967-abfc-005bd9c95478 was cancelled by user
+INFO:__main__:✓ STATE ROLLBACK: Restoring original state
+INFO:__main__:✓ CLEANUP: Removing any partial data files from cancelled operation
+INFO:__main__:⚠ Removing recent map file (might be partial): data/maps/map.png
+INFO:__main__:⚠ Removing recent embeddings file (might be partial): data/embeddings/embeddings.json
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44164 - "GET /api/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/progress HTTP/1.1" 200 OK
+INFO:__main__:=== WEBSOCKET ABORT INITIATED ===
+INFO:__main__:✗ No active WebSocket to abort
+INFO:     127.0.0.1:50144 - "POST /api/abort_websocket HTTP/1.1" 200 OK
+INFO:__main__:=== WEBSOCKET ABORT INITIATED ===
+INFO:__main__:✗ No active WebSocket to abort
+INFO:     127.0.0.1:50144 - "POST /api/abort_websocket HTTP/1.1" 200 OK
+INFO:__main__:=== ABORT OPERATION INITIATED ===
+ERROR:src.device.websocket_client:❌ Failed to send cancellation: sent 1000 (OK); no close frame received
+WARNING:__main__:⚠️ WebSocket task cancellation failed - no active task
+INFO:__main__:Active local tasks to cancel: ['init_map']
+INFO:__main__:✓ Local task already done: init_map
+INFO:__main__:=== ABORT OPERATION COMPLETED ===
+INFO:     127.0.0.1:44164 - "POST /api/abort HTTP/1.1" 200 OK
+INFO:__main__:=== ABORT OPERATION INITIATED ===
+ERROR:src.device.websocket_client:❌ Failed to send cancellation: sent 1000 (OK); no close frame received
+WARNING:__main__:⚠️ WebSocket task cancellation failed - no active task
+INFO:__main__:Active local tasks to cancel: ['init_map']
+INFO:__main__:✓ Local task already done: init_map
+INFO:__main__:=== ABORT OPERATION COMPLETED ===
+INFO:     127.0.0.1:50144 - "POST /api/abort HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50144 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53140 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53140 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33670 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33670 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52648 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52648 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50394 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59218 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59218 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59218 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59218 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:__main__:📦 Processing mission data for session r9rjs9ip
+INFO:__main__:✅ Extracted mission data from zip
+INFO:__main__:📁 Moved map.png to maps/
+INFO:__main__:📁 Moved embeddings.json to embeddings/
+INFO:__main__:✅ Mission data processed and state updated for session r9rjs9ip
+INFO:     127.0.0.1:58656 - "POST /api/process_mission_data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:__main__:📦 Processing mission data for session 7o8ryrd3
+INFO:__main__:✅ Extracted mission data from zip
+INFO:__main__:📁 Moved map.png to maps/
+INFO:__main__:📁 Moved embeddings.json to embeddings/
+INFO:__main__:✅ Mission data processed and state updated for session 7o8ryrd3
+INFO:     127.0.0.1:58656 - "POST /api/process_mission_data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "POST /api/clear_state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/progress HTTP/1.1" 200 OK
+INFO:__main__:=== WEBSOCKET ABORT INITIATED ===
+INFO:__main__:✗ No active WebSocket to abort
+INFO:     127.0.0.1:58656 - "POST /api/abort_websocket HTTP/1.1" 200 OK
+INFO:__main__:=== WEBSOCKET ABORT INITIATED ===
+INFO:__main__:✗ No active WebSocket to abort
+INFO:     127.0.0.1:58656 - "POST /api/abort_websocket HTTP/1.1" 200 OK
+INFO:__main__:=== ABORT OPERATION INITIATED ===
+ERROR:src.device.websocket_client:❌ Failed to send cancellation: sent 1000 (OK); no close frame received
+WARNING:__main__:⚠️ WebSocket task cancellation failed - no active task
+INFO:__main__:Active local tasks to cancel: ['init_map']
+INFO:__main__:✓ Local task already done: init_map
+INFO:__main__:=== ABORT OPERATION COMPLETED ===
+INFO:     127.0.0.1:58656 - "POST /api/abort HTTP/1.1" 200 OK
+INFO:__main__:=== ABORT OPERATION INITIATED ===
+ERROR:src.device.websocket_client:❌ Failed to send cancellation: sent 1000 (OK); no close frame received
+WARNING:__main__:⚠️ WebSocket task cancellation failed - no active task
+INFO:__main__:Active local tasks to cancel: ['init_map']
+INFO:__main__:✓ Local task already done: init_map
+INFO:__main__:=== ABORT OPERATION COMPLETED ===
+INFO:     127.0.0.1:58656 - "POST /api/abort HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:__main__:📦 Processing mission data for session z0r39av5
+INFO:__main__:✅ Extracted mission data from zip
+INFO:__main__:📁 Moved map.png to maps/
+INFO:__main__:📁 Moved embeddings.json to embeddings/
+INFO:__main__:✅ Mission data processed and state updated for session z0r39av5
+INFO:     127.0.0.1:58656 - "POST /api/process_mission_data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "POST /api/clear_state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "POST /api/fetch_session HTTP/1.1" 200 OK
+INFO:__main__:Starting fetch session background task for session: z0r39av5
+INFO:     127.0.0.1:58656 - "GET /api/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58656 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:51354 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:51354 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58428 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58428 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:42660 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:42660 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:44580 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:44580 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:50812 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:50812 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:49248 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:33094 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:33082 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:33082 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:55814 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:55814 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:33964 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:33964 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:41094 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:41094 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:41376 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:41376 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:41376 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:44896 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:44896 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:40194 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:40194 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:50146 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:50146 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:57416 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:57416 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:40998 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:40998 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:47786 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:47786 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:46610 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:46610 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:46616 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:46616 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:46616 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:46616 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:46616 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:46616 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:46616 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:46616 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:46616 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:47648 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:47650 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:47650 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:47650 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:50090 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:50090 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:53036 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:53036 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:34822 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:34822 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:34822 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:34822 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:34822 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:34822 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:34822 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:34822 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:55854 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:55854 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:55094 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:55094 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:32936 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:32936 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58512 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58512 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:54604 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:54604 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:57854 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:57854 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58738 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58738 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58738 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:58738 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:59530 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:59530 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+ERROR:__main__:Error loading state: [Errno 2] No such file or directory: 'state.yaml'
+INFO:     127.0.0.1:57254 - "GET /api/state HTTP/1.1" 200 OK

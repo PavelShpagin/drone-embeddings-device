@@ -214,9 +214,19 @@ public:
         }
     }
     
+    void waitForKeyPress() {
+        std::cout << "DeviceReader ready. Press ENTER to start processing..." << std::endl;
+        std::string input;
+        std::getline(std::cin, input);
+        std::cout << "Starting stream processing..." << std::endl;
+    }
+    
     void run() {
         std::cout << "Starting DeviceReader main loop" << std::endl;
         std::cout << "Stream files loaded: " << stream_files.size() << std::endl;
+        
+        // Wait for key press before starting
+        waitForKeyPress();
         
         int loop_count = 0;
         while (true) {

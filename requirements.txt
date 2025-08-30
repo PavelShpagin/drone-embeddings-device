@@ -3,7 +3,12 @@ torchvision
 numpy
 pillow
 requests
+fastapi
+uvicorn[standard]
+pyyaml
+aiohttp
 
 matplotlib
 pandas
 opencv-python
+websockets
