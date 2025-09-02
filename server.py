@@ -557,27 +557,27 @@ async def get_index():
                         <input type="number" id="km-input" min="1" max="100" value="1" placeholder="1">
                     </div>
                     
+                    <button class="btn btn-primary" style="margin-top: 5px; width: 100%;" id="submit-btn" onclick="submitMission()">
+                        Submit Mission
+                    </button>
+                    
                     <!-- Fetch Existing Session -->
-                    <div id="manual-session" style="margin-top: 15px; margin-bottom: 15px;">
+                    <div id="manual-session" style="margin-top: 20px;">
                         <div class="manual-session-row">
                             <input id="session-input" type="text" maxlength="8" placeholder="8-char session id" />
                             <button class="btn btn-blue" id="fetch-session-btn" onclick="fetchExistingSession()">Fetch</button>
                         </div>
                     </div>
                     
-                    <button class="btn btn-primary" id="submit-btn" onclick="submitMission()" style="width: 100%;">
-                        Submit Mission
-                    </button>
-                    
-                    <button class="btn btn-test" id="test-websocket-btn" onclick="testWebSocket()" style="width: 100%; margin-top: 15px; background-color: #8B5CF6;">
+                    <!-- 
+                    <button class="btn btn-test" id="test-websocket-btn" onclick="testWebSocket()" style="width: 100%; margin-top: 20px; background-color: #8B5CF6;">
                         TEST WEBSOCKET
                     </button>
-
                     
                     <button class="btn btn-discovery" id="discovery-btn" onclick="startDiscovery()" style="width: 100%; margin-top: 15px;">
                         Find Drones
                     </button>
-                    
+                    -->
                     <button class="btn btn-secondary" id="send-logs-btn" onclick="sendLogs()" style="width: 100%; margin-top: 15px;">
                         Send Logs
                     </button>
@@ -756,10 +756,14 @@ async def get_index():
         
         // Button management functions
         function disableButtons() {
-            document.getElementById('submit-btn').disabled = true;
-            document.getElementById('discovery-btn').disabled = true;
-            document.getElementById('send-logs-btn').disabled = true;
-            document.getElementById('fetch-session-btn').disabled = true;
+            const submitBtn = document.getElementById('submit-btn');
+            if (submitBtn) submitBtn.disabled = true;
+            const discoveryBtn = document.getElementById('discovery-btn');
+            if (discoveryBtn) discoveryBtn.disabled = true;
+            const sendLogsBtn = document.getElementById('send-logs-btn');
+            if (sendLogsBtn) sendLogsBtn.disabled = true;
+            const fetchBtn = document.getElementById('fetch-session-btn');
+            if (fetchBtn) fetchBtn.disabled = true;
             
             // Also disable clear state button
             const clearBtn = document.querySelector('.state-box button');
@@ -767,10 +771,14 @@ async def get_index():
         }
         
         function enableButtons() {
-            document.getElementById('submit-btn').disabled = false;
-            document.getElementById('discovery-btn').disabled = false;
-            document.getElementById('send-logs-btn').disabled = false;
-            document.getElementById('fetch-session-btn').disabled = false;
+            const submitBtn = document.getElementById('submit-btn');
+            if (submitBtn) submitBtn.disabled = false;
+            const discoveryBtn = document.getElementById('discovery-btn');
+            if (discoveryBtn) discoveryBtn.disabled = false;
+            const sendLogsBtn = document.getElementById('send-logs-btn');
+            if (sendLogsBtn) sendLogsBtn.disabled = false;
+            const fetchBtn = document.getElementById('fetch-session-btn');
+            if (fetchBtn) fetchBtn.disabled = false;
             
             // Re-enable clear state button
             const clearBtn = document.querySelector('.state-box button');
@@ -907,17 +915,60 @@ async def get_index():
                             const progress = data.progress || 0;
                             const message = data.message || 'Processing...';
                             
-                            updateProgress(message, progress);
+                            // Pass milestone data for enhanced progress display
+                            const extraData = {
+                                tiles_completed: data.tiles_completed,
+                                total_tiles: data.total_tiles,
+                                embeddings_processed: data.embeddings_processed,
+                                total_embeddings: data.total_embeddings,
+                                phase: data.phase
+                            };
+                            
+                            updateProgress(message, progress, extraData);
                             
                             // Check for completion
                             if (data.status === 'complete' || progress >= 100) {
                                 console.log('✅ Mission completed successfully');
                                 updateProgress('Processing mission data...', 100);
                                 
-                                // Process the mission data if zip_data is present
+                                // Handle both zip_data (small files) and download_url (large files)
                                 if (data.zip_data && data.session_id) {
-                                    console.log('📦 Processing mission data...');
+                                    console.log('📦 Processing mission data directly...');
                                     processMissionData(data.zip_data, data.session_id, lat, lng, km);
+                                } else if (data.download_url && data.session_id) {
+                                    console.log(`📥 Downloading mission data from: ${data.download_url}`);
+                                    updateProgress('Downloading mission data...', 95);
+                                    
+                                    fetch(`http://localhost:5000${data.download_url}`)
+                                        .then(response => {
+                                            if (!response.ok) {
+                                                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                                            }
+                                            return response.blob();
+                                        })
+                                        .then(blob => {
+                                            console.log(`✅ Downloaded ${blob.size} bytes`);
+                                            // Convert blob to base64 for processMissionData
+                                            const reader = new FileReader();
+                                            reader.onload = function() {
+                                                const base64Data = reader.result.split(',')[1]; // Remove data:application/zip;base64, prefix
+                                                processMissionData(base64Data, data.session_id, lat, lng, km);
+                                            };
+                                            reader.readAsDataURL(blob);
+                                        })
+                                        .catch(error => {
+                                            console.error('❌ Download failed:', error);
+                                            alert(`Failed to download mission data: ${error.message}`);
+                                            setTimeout(() => {
+                                                hideProgress();
+                                                enableButtons();
+                                                loadState();
+                                                if (missionWebSocketConnection) {
+                                                    missionWebSocketConnection.close();
+                                                    missionWebSocketConnection = null;
+                                                }
+                                            }, 2000);
+                                        });
                                 } else {
                                     console.log('⚠️ No mission data received, completing anyway');
                                     setTimeout(() => {
@@ -1114,60 +1165,46 @@ async def get_index():
             }, 0); // Execute in next tick to avoid blocking
         };
         
-        // Quick file cleanup (non-blocking)
-        async function quickFileCleanup() {
-            try {
-                console.log('Starting quick file cleanup...');
-                // Call server to clean up any partial files
-                await fetch('/api/cleanup_partial_files', { method: 'POST' });
-                console.log('Quick cleanup completed');
-            } catch (error) {
-                console.log('Cleanup completed (may have been nothing to clean)');
-            }
-        }
+        // Quick file cleanup removed - WebSocket-only operations
         
         // Background cancel operation (doesn't block UI)
         async function cancelOperationBackground() {
-            console.log('🔄 Starting background cancellation...');
+            console.log('🔄 Starting clean WebSocket-only cancellation...');
             try {
-                const progress = await fetch('/api/progress').then(r => r.json());
+                // Clean WebSocket-only cancellation - no HTTP fallbacks
+                console.log('🛑 Closing all WebSocket connections...');
                 
-                if (progress.message && progress.message.includes('Looking for other drones')) {
-                    console.log('🛑 Stopping discovery operation...');
-                    await fetch('/api/stop_discovery', { method: 'POST' });
-                } else {
-                    console.log('🛑 Aborting operations & cleanup...');
-                    
-                    // Close mission WebSocket if active
-                    if (missionWebSocketConnection) {
-                        console.log('🛑 Closing mission WebSocket...');
-                        missionWebSocketConnection.close();
-                        missionWebSocketConnection = null;
-                    }
-                    
-                    // Close test WebSocket if active
-                    if (testWebSocketConnection) {
-                        console.log('🛑 Closing test WebSocket...');
-                        testWebSocketConnection.close();
-                        testWebSocketConnection = null;
-                    }
-                    
-                    // Abort server-side WebSocket connections
-                    try {
-                        const wsResult = await fetch('/api/abort_websocket', { method: 'POST' });
-                        const wsData = await wsResult.json();
-                        console.log('✅ WebSocket abort result:', wsData.status);
-                    } catch (wsError) {
-                        console.log('⚠️ WebSocket abort failed (ignored):', wsError.message);
-                    }
-                    
-                    // Also call regular abort as fallback
-                    console.log('🛑 Calling regular abort API...');
-                    await fetch('/api/abort', { method: 'POST' });
-                    console.log('✅ Background cleanup complete');
+                // Close mission WebSocket if active
+                if (missionWebSocketConnection) {
+                    console.log('🛑 Closing mission WebSocket...');
+                    missionWebSocketConnection.close();
+                    missionWebSocketConnection = null;
                 }
+                
+                // Close test WebSocket if active
+                if (testWebSocketConnection) {
+                    console.log('🛑 Closing test WebSocket...');
+                    testWebSocketConnection.close();
+                    testWebSocketConnection = null;
+                }
+                
+                // Close fetch WebSocket if active
+                if (fetchWebSocketConnection) {
+                    console.log('🛑 Closing fetch WebSocket...');
+                    fetchWebSocketConnection.close();
+                    fetchWebSocketConnection = null;
+                }
+                
+                // Close logs WebSocket if active
+                if (logsWebSocketConnection) {
+                    console.log('🛑 Closing logs WebSocket...');
+                    logsWebSocketConnection.close();
+                    logsWebSocketConnection = null;
+                }
+                
+                console.log('✅ Clean WebSocket cancellation complete - no HTTP fallbacks');
             } catch (error) {
-                console.log('⚠️ Background cancellation error (ignored):', error.message);
+                console.log('⚠️ WebSocket cancellation error (ignored):', error.message);
             }
         }
         
@@ -1178,90 +1215,49 @@ async def get_index():
             document.getElementById('progress-overlay').style.display = 'flex';
             // Reset per-run derived values
             totalTilesDetected = 0;
-            // Do not reset bar; only move forward
-            unifiedProgress = Math.max(unifiedProgress, Number(progress) || 0);
-            updateProgress(status, unifiedProgress);
+            // Reset progress for new mission to show smooth milestone transitions
+            unifiedProgress = 0;
+            updateProgress(status, Number(progress) || 0);
         }
         
-        // Ultra-smooth progress display with advanced anti-flickering
-        let lastProgressUpdate = 0;
-        let progressAnimationFrame = null;
-        let pendingProgress = null;
-        let lastRenderTime = 0;
+        // Smooth milestone-based progress display
         
-        function updateProgress(status, progress) {
+        function updateProgress(status, progress, extraData = {}) {
             // Use progress directly from WebSocket (already calculated correctly)
             const displayProgress = Math.max(0, Math.min(100, Number(progress) || 0));
             const displayStatus = status || 'Processing...';
             
-            console.log(`📊 Progress update: ${displayProgress}% - ${displayStatus}`);
+            // Enhanced status with milestone information
+            let enhancedStatus = displayStatus;
+            if (extraData.tiles_completed && extraData.total_tiles) {
+                const tileProgress = Math.round((extraData.tiles_completed / extraData.total_tiles) * 100);
+                enhancedStatus = `${displayStatus} (${extraData.tiles_completed}/${extraData.total_tiles} tiles - ${tileProgress}%)`;
+            } else if (extraData.embeddings_processed && extraData.total_embeddings) {
+                const embeddingProgress = Math.round((extraData.embeddings_processed / extraData.total_embeddings) * 100);
+                enhancedStatus = `${displayStatus}`;
+            }
             
-            // Store pending update
-            pendingProgress = {
-                progress: displayProgress,
-                status: displayStatus,
-                timestamp: performance.now()
-            };
+            console.log(`📊 Progress update: ${displayProgress}% - ${enhancedStatus}`);
             
-            // Use requestAnimationFrame for smooth 60fps updates
-            if (!progressAnimationFrame) {
-                progressAnimationFrame = requestAnimationFrame(renderProgressUpdate);
+            // ALWAYS update progress bar for smooth milestone transitions
+            // Only prevent backwards movement if it's a significant jump backwards
+            const shouldUpdate = displayProgress >= unifiedProgress || 
+                                displayProgress < unifiedProgress - 5; // Allow small backwards corrections
+            
+            if (shouldUpdate) {
+                unifiedProgress = displayProgress;
+                
+                // Update status and progress bar immediately for smooth UX
+                document.getElementById('status-text').textContent = enhancedStatus;
+                document.getElementById('progress-fill').style.width = `${displayProgress}%`;
+                
+                // Add smooth CSS transition for milestone nudges
+                const progressFill = document.getElementById('progress-fill');
+                progressFill.style.transition = 'width 0.3s ease-out';
             }
         }
         
-        function renderProgressUpdate(currentTime) {
-            progressAnimationFrame = null;
-            
-            if (!pendingProgress) return;
-            
-            // Throttle to max 30fps to prevent excessive updates
-            if (currentTime - lastRenderTime < 33) {
-                progressAnimationFrame = requestAnimationFrame(renderProgressUpdate);
-                return;
-            }
-            
-            const { progress: displayProgress, status: displayStatus } = pendingProgress;
-            
-            // Prevent backwards movement and ensure smooth progression
-            const targetProgress = Math.max(unifiedProgress, displayProgress);
-            
-            // Handle different types of incremental progress updates
-            const isTileProcessing = displayStatus.toLowerCase().includes('tile') && displayStatus.includes('/');
-            const isEmbeddingProcessing = displayStatus.toLowerCase().includes('embedding') && displayStatus.includes('/');
-            const isIncrementalUpdate = displayStatus.includes('(') && displayStatus.includes('/');
-            
-            // Ultra-fine progress steps for tile-by-tile updates
-            let minProgressStep;
-            if (isTileProcessing) {
-                minProgressStep = 0.005; // Tiny steps for each tile (ultra-smooth)
-            } else if (isEmbeddingProcessing) {
-                minProgressStep = 0.02;  // Small steps for embeddings
-            } else if (isIncrementalUpdate) {
-                minProgressStep = 0.05;  // Regular incremental updates
-            } else {
-                minProgressStep = 0.2;   // Major milestone updates
-            }
-            
-            // Only update if there's meaningful progress (prevents micro-flickering)
-            const allowBackwards = displayProgress < unifiedProgress * 0.3; // More restrictive backwards movement
-            const shouldUpdate = targetProgress > unifiedProgress + minProgressStep || 
-                                displayStatus !== document.getElementById('status-text').textContent ||
-                                allowBackwards;
-            
-            if (shouldUpdate) {
-                // Update status immediately for responsiveness
-                document.getElementById('status-text').textContent = displayStatus;
-                
-                // Use CSS transitions for smooth progress bar movement
-                unifiedProgress = targetProgress;
-                document.getElementById('progress-fill').style.width = `${targetProgress}%`;
-                
-                lastRenderTime = currentTime;
-            }
-            
-            // Clear pending update
-            pendingProgress = null;
-        }
+        // Simplified progress rendering - removed complex throttling for smooth milestone updates
         
         // Hide progress overlay
         function hideProgress() {
@@ -1430,8 +1426,307 @@ async def get_index():
             }
         }
         
-        // WebSocket Test Functions
+        // WebSocket connections for different features
         let testWebSocketConnection = null;
+        let fetchWebSocketConnection = null;
+        let logsWebSocketConnection = null;
+        
+        // Fetch Existing Session via WebSocket
+        async function fetchExistingSession() {
+            console.log('🔍 Starting fetch existing session...');
+            
+            const sessionId = document.getElementById('session-input').value.trim();
+            
+            if (!sessionId) {
+                alert('Please enter a session ID');
+                return;
+            }
+            
+            if (sessionId.length !== 8) {
+                alert('Session ID must be exactly 8 characters');
+                return;
+            }
+            
+            try {
+                disableButtons();
+                showProgress('Connecting to fetch server...', 0);
+                
+                const wsUrl = `ws://localhost:5000/ws/fetch`;
+                console.log('🚀 Connecting to fetch WebSocket:', wsUrl);
+                fetchWebSocketConnection = new WebSocket(wsUrl);
+                
+                fetchWebSocketConnection.onopen = function(event) {
+                    console.log('✅ Fetch WebSocket connected');
+                    showProgress('Connected - Searching for session...', 5);
+                    
+                    // Send fetch request
+                    fetchWebSocketConnection.send(JSON.stringify({
+                        type: 'fetch_cached',
+                        session_id: sessionId
+                    }));
+                };
+                
+                fetchWebSocketConnection.onmessage = function(event) {
+                    console.log('📨 Fetch progress:', event.data);
+                    try {
+                        const data = JSON.parse(event.data);
+                        
+                        if (data.type === 'progress') {
+                            // Pass milestone data for enhanced progress display
+                            const extraData = {
+                                tiles_completed: data.tiles_completed,
+                                total_tiles: data.total_tiles,
+                                embeddings_processed: data.embeddings_processed,
+                                total_embeddings: data.total_embeddings,
+                                phase: data.phase
+                            };
+                            
+                            updateProgress(data.message, data.progress, extraData);
+                            
+                            // Handle completion with cached data
+                            if (data.status === 'complete') {
+                                console.log('✅ Cached data received!');
+                                
+                                // Process the cached data
+                                const lat = (typeof data.lat === 'number') ? data.lat : null;
+                                const lng = (typeof data.lng === 'number') ? data.lng : null;
+                                const km = (typeof data.km === 'number') ? data.km : null;
+                                
+                                // Handle both zip_data (legacy) and download_url (new) approaches
+                                if (data.zip_data) {
+                                    // Legacy approach - direct zip data
+                                    processMissionData(data.zip_data, data.session_id, lat, lng, km).then(() => {
+                                        updateProgress('Cached data loaded successfully!', 100);
+                                        setTimeout(() => {
+                                            hideProgress();
+                                            enableButtons();
+                                            loadState();
+                                            if (fetchWebSocketConnection) {
+                                                fetchWebSocketConnection.close();
+                                                fetchWebSocketConnection = null;
+                                            }
+                                        }, 2000);
+                                    });
+                                } else if (data.download_url) {
+                                    // New approach - download from URL
+                                    console.log(`📥 Downloading cached data from: ${data.download_url}`);
+                                    updateProgress('Downloading cached data...', 95);
+                                    
+                                    fetch(`http://localhost:5000${data.download_url}`)
+                                        .then(response => response.blob())
+                                        .then(blob => {
+                                            // Convert blob to base64 for processMissionData
+                                            const reader = new FileReader();
+                                            reader.onload = function() {
+                                                const base64Data = reader.result.split(',')[1]; // Remove data:application/zip;base64, prefix
+                                                processMissionData(base64Data, data.session_id, lat, lng, km).then(() => {
+                                                    updateProgress('Cached data loaded successfully!', 100);
+                                                    setTimeout(() => {
+                                                        hideProgress();
+                                                        enableButtons();
+                                                        loadState();
+                                                        if (fetchWebSocketConnection) {
+                                                            fetchWebSocketConnection.close();
+                                                            fetchWebSocketConnection = null;
+                                                        }
+                                                    }, 2000);
+                                                });
+                                            };
+                                            reader.readAsDataURL(blob);
+                                        })
+                                        .catch(error => {
+                                            console.error('❌ Download failed:', error);
+                                            alert('Failed to download cached data');
+                                            hideProgress();
+                                            enableButtons();
+                                            if (fetchWebSocketConnection) {
+                                                fetchWebSocketConnection.close();
+                                                fetchWebSocketConnection = null;
+                                            }
+                                        });
+                                } else {
+                                    console.log('⚠️ No cached data available');
+                                    updateProgress('No cached data available', 100);
+                                    setTimeout(() => {
+                                        hideProgress();
+                                        enableButtons();
+                                        if (fetchWebSocketConnection) {
+                                            fetchWebSocketConnection.close();
+                                            fetchWebSocketConnection = null;
+                                        }
+                                    }, 2000);
+                                }
+                            }
+                        } else if (data.type === 'error') {
+                            console.error('❌ Fetch error:', data.message);
+                            alert(`Fetch failed: ${data.message}`);
+                            hideProgress();
+                            enableButtons();
+                            if (fetchWebSocketConnection) {
+                                fetchWebSocketConnection.close();
+                                fetchWebSocketConnection = null;
+                            }
+                        }
+                    } catch (e) {
+                        console.error('Error parsing fetch message:', e);
+                    }
+                };
+                
+                fetchWebSocketConnection.onclose = function(event) {
+                    console.log('❌ Fetch WebSocket disconnected');
+                    fetchWebSocketConnection = null;
+                };
+                
+                fetchWebSocketConnection.onerror = function(error) {
+                    console.error('Fetch WebSocket error:', error);
+                    alert('Fetch connection failed. Please try again.');
+                    hideProgress();
+                    enableButtons();
+                    fetchWebSocketConnection = null;
+                };
+                
+            } catch (error) {
+                console.error('Error in fetchExistingSession:', error);
+                alert('Failed to fetch session. Please try again.');
+                hideProgress();
+                enableButtons();
+                if (fetchWebSocketConnection) {
+                    fetchWebSocketConnection.close();
+                    fetchWebSocketConnection = null;
+                }
+            }
+        }
+        
+        // Send Logs via WebSocket
+        async function sendLogs() {
+            console.log('📤 Starting send logs...');
+            
+            try {
+                disableButtons();
+                showProgress('Preparing logs for upload...', 0);
+                
+                // Create logs zip from data/logs directory
+                const logsData = await createLogsZip();
+                
+                if (!logsData) {
+                    alert('No logs found to upload');
+                    hideProgress();
+                    enableButtons();
+                    return;
+                }
+                
+                showProgress('Connecting to logs server...', 10);
+                
+                const wsUrl = `ws://localhost:5000/ws/logs`;
+                console.log('🚀 Connecting to logs WebSocket:', wsUrl);
+                logsWebSocketConnection = new WebSocket(wsUrl);
+                
+                logsWebSocketConnection.onopen = function(event) {
+                    console.log('✅ Logs WebSocket connected');
+                    showProgress('Connected - Uploading logs...', 15);
+                    
+                    // Send logs upload request
+                    logsWebSocketConnection.send(JSON.stringify({
+                        type: 'upload_logs',
+                        logs_data: logsData
+                    }));
+                };
+                
+                logsWebSocketConnection.onmessage = function(event) {
+                    console.log('📨 Logs progress:', event.data);
+                    try {
+                        const data = JSON.parse(event.data);
+                        
+                        if (data.type === 'progress') {
+                            updateProgress(data.message, data.progress);
+                            
+                            // Handle completion
+                            if (data.status === 'complete') {
+                                console.log('✅ Logs uploaded successfully!');
+                                
+                                // Clean up local logs after successful upload
+                                cleanupLocalLogs().then(() => {
+                                    updateProgress('Logs uploaded and cleaned up locally!', 100);
+                                    setTimeout(() => {
+                                        hideProgress();
+                                        enableButtons();
+                                        if (logsWebSocketConnection) {
+                                            logsWebSocketConnection.close();
+                                            logsWebSocketConnection = null;
+                                        }
+                                    }, 2000);
+                                });
+                            }
+                        } else if (data.type === 'error') {
+                            console.error('❌ Logs upload error:', data.message);
+                            alert(`Logs upload failed: ${data.message}`);
+                            hideProgress();
+                            enableButtons();
+                            if (logsWebSocketConnection) {
+                                logsWebSocketConnection.close();
+                                logsWebSocketConnection = null;
+                            }
+                        }
+                    } catch (e) {
+                        console.error('Error parsing logs message:', e);
+                    }
+                };
+                
+                logsWebSocketConnection.onclose = function(event) {
+                    console.log('❌ Logs WebSocket disconnected');
+                    logsWebSocketConnection = null;
+                };
+                
+                logsWebSocketConnection.onerror = function(error) {
+                    console.error('Logs WebSocket error:', error);
+                    alert('Logs upload connection failed. Please try again.');
+                    hideProgress();
+                    enableButtons();
+                    logsWebSocketConnection = null;
+                };
+                
+            } catch (error) {
+                console.error('Error in sendLogs:', error);
+                alert('Failed to send logs. Please try again.');
+                hideProgress();
+                enableButtons();
+                if (logsWebSocketConnection) {
+                    logsWebSocketConnection.close();
+                    logsWebSocketConnection = null;
+                }
+            }
+        }
+        
+        // Helper function to create logs zip
+        async function createLogsZip() {
+            try {
+                const response = await fetch('/api/create_logs_zip', { method: 'POST' });
+                if (response.ok) {
+                    const data = await response.json();
+                    return data.logs_data;
+                } else {
+                    console.error('Failed to create logs zip');
+                    return null;
+                }
+            } catch (error) {
+                console.error('Error creating logs zip:', error);
+                return null;
+            }
+        }
+        
+        // Helper function to clean up local logs
+        async function cleanupLocalLogs() {
+            try {
+                const response = await fetch('/api/cleanup_logs', { method: 'POST' });
+                if (response.ok) {
+                    console.log('✅ Local logs cleaned up');
+                } else {
+                    console.error('Failed to cleanup local logs');
+                }
+            } catch (error) {
+                console.error('Error cleaning up logs:', error);
+            }
+        }
         
         function testWebSocket() {
             console.log('Starting WebSocket test...');
@@ -1581,9 +1876,9 @@ async def init_map(request: InitMapRequest, background_tasks: BackgroundTasks):
 class ProcessMissionDataRequest(BaseModel):
     zip_data: str
     session_id: str
-    lat: float
-    lng: float
-    km: float
+    lat: Optional[float] = None
+    lng: Optional[float] = None
+    km: Optional[float] = None
 
 
 @app.post("/api/process_mission_data")
@@ -1624,18 +1919,15 @@ async def process_mission_data(request: ProcessMissionDataRequest):
                     shutil.move(src, dst)
                     logger.info(f"📁 Moved {filename} to embeddings/")
         
-        # Update state with the new mission data
-        state_data = {
-            'lat': request.lat,
-            'lng': request.lng,
-            'km': request.km,
-            'session_id': request.session_id,
-            'last_updated': datetime.now().isoformat()
+        # Update state by merging with existing values when None
+        current = state_manager.load_state()
+        merged_state = {
+            'lat': request.lat if request.lat is not None else current.get('lat'),
+            'lng': request.lng if request.lng is not None else current.get('lng'),
+            'km': request.km if request.km is not None else current.get('km'),
+            'session_id': request.session_id or current.get('session_id', ''),
         }
-        
-        # Save state to YAML file
-        with open('state.yaml', 'w') as f:
-            yaml.dump(state_data, f)
+        state_manager.save_state(merged_state)
         
         logger.info(f"✅ Mission data processed and state updated for session {request.session_id}")
         return {"success": True, "message": "Mission data processed successfully"}
@@ -1661,6 +1953,73 @@ async def send_logs(background_tasks: BackgroundTasks):
     )
     
     return {"status": "started", "task_id": task_id}
+
+
+@app.post("/api/create_logs_zip")
+async def create_logs_zip():
+    """Create a zip file of all logs in data/logs directory."""
+    try:
+        import base64
+        import zipfile
+        import io
+        import os
+        import glob
+        
+        logs_dir = "data/logs"
+        
+        # Check if logs directory exists and has files
+        if not os.path.exists(logs_dir):
+            return {"success": False, "error": "No logs directory found"}
+        
+        log_files = glob.glob(os.path.join(logs_dir, "*"))
+        if not log_files:
+            return {"success": False, "error": "No log files found"}
+        
+        # Create zip in memory
+        zip_buffer = io.BytesIO()
+        with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zip_file:
+            for log_file in log_files:
+                if os.path.isfile(log_file):
+                    # Add file to zip with relative path
+                    arcname = os.path.relpath(log_file, "data")
+                    zip_file.write(log_file, arcname)
+        
+        # Encode to base64
+        logs_data = base64.b64encode(zip_buffer.getvalue()).decode('utf-8')
+        
+        return {
+            "success": True, 
+            "logs_data": logs_data,
+            "file_count": len(log_files)
+        }
+        
+    except Exception as e:
+        logger.error(f"❌ Error creating logs zip: {e}")
+        return {"success": False, "error": str(e)}
+
+
+@app.post("/api/cleanup_logs")
+async def cleanup_logs():
+    """Clean up local logs after successful upload."""
+    try:
+        import os
+        import shutil
+        
+        logs_dir = "data/logs"
+        
+        if os.path.exists(logs_dir):
+            # Remove all files in logs directory
+            for filename in os.listdir(logs_dir):
+                file_path = os.path.join(logs_dir, filename)
+                if os.path.isfile(file_path):
+                    os.remove(file_path)
+                    logger.info(f"🗑️ Removed log file: {filename}")
+        
+        return {"success": True, "message": "Logs cleaned up successfully"}
+        
+    except Exception as e:
+        logger.error(f"❌ Error cleaning up logs: {e}")
+        return {"success": False, "error": str(e)}
 
 
 @app.post("/api/clear_state")
@@ -1773,17 +2132,24 @@ async def abort_operation():
     try:
         from src.device.websocket_client import cancel_current_websocket_task
         import asyncio
-        
-        # Cancel via WebSocket
+
+        # Cancel via WebSocket (best-effort, non-fatal on failure)
         loop = asyncio.get_event_loop()
-        abort_success = await loop.run_in_executor(None, lambda: asyncio.run(cancel_current_websocket_task()))
-        
+        abort_success = False
+        try:
+            abort_success = await loop.run_in_executor(
+                None,
+                lambda: asyncio.run(cancel_current_websocket_task())
+            )
+        except Exception:
+            abort_success = False
+
         if abort_success:
-            logger.info("✓ WebSocket task cancelled successfully")
-                else:
-            logger.warning("⚠️ WebSocket task cancellation failed - no active task")
-            except Exception as e:
-        logger.error(f"❌ Error cancelling WebSocket task: {e}")
+            logger.info("WebSocket task cancelled successfully")
+        else:
+            logger.info("No active WebSocket task to cancel")
+    except Exception as e:
+        logger.error(f"Error cancelling WebSocket task: {e}")
     
     # Cancel active local tasks
     if active_tasks:
@@ -1997,36 +2363,60 @@ async def _init_map_background(lat: float, lng: float, km: float, task_id: str):
         # Initialize session_id to avoid undefined variable errors
         session_id = ''
         
-            try:
+        try:
             from src.device.websocket_client import call_server_init_map_websocket
-                result = await call_server_init_map_websocket(
+            result = await call_server_init_map_websocket(
                 lat=lat, 
                 lng=lng, 
                 meters=int(km * 1000),
-                server_url=os.getenv("AWS_WS_URL", "ws://ec2-16-171-238-14.eu-north-1.compute.amazonaws.com:5000"),
-                    progress_callback=update_progress
+                server_url="ws://localhost:5000",
+                progress_callback=update_progress
                 )
             
             logger.info(f"✅ Server call completed: success={result.get('success')}")
             
-            # Process zip_data if present
-            if result.get('success') and result.get('zip_data'):
+            # Process mission data if present
+            if result.get('success'):
                 try:
-                    # Decode base64 zip data
-                    zip_bytes = base64.b64decode(result['zip_data'])
+                    zip_bytes = None
                     
-                    # Extract zip contents
-                    with zipfile.ZipFile(io.BytesIO(zip_bytes), 'r') as zip_ref:
-                        # Create data directories
-                        os.makedirs("data/maps", exist_ok=True)
-                        os.makedirs("data/embeddings", exist_ok=True)
+                    if result.get('zip_data'):
+                        # Small file - decode base64 zip data directly
+                        logger.info("📦 Processing zip_data directly")
+                        zip_bytes = base64.b64decode(result['zip_data'])
                         
-                        # Extract all files to the data directory
-                        zip_ref.extractall("data/")
-                        logger.info(f"✅ Extracted mission data from zip")
+                    elif result.get('download_url'):
+                        # Large file - download from URL
+                        download_url = result['download_url']
+                        # Use localhost:5000 for the download since that's where our AWS server is running
+                        server_base = "http://localhost:5000"
+                        full_url = f"{server_base}{download_url}"
                         
-        except Exception as e:
-                    logger.error(f"❌ Failed to process zip_data: {e}")
+                        logger.info(f"📥 Downloading large mission file from: {full_url}")
+                        
+                        import requests
+                        response = requests.get(full_url, timeout=30)
+                        if response.status_code == 200:
+                            zip_bytes = response.content
+                            logger.info(f"✅ Downloaded {len(zip_bytes)} bytes")
+                        else:
+                            raise Exception(f"Download failed with status {response.status_code}")
+                    
+                    # Extract zip contents if we have data
+                    if zip_bytes:
+                        with zipfile.ZipFile(io.BytesIO(zip_bytes), 'r') as zip_ref:
+                            # Create data directories
+                            os.makedirs("data/maps", exist_ok=True)
+                            os.makedirs("data/embeddings", exist_ok=True)
+                            
+                            # Extract all files to the data directory
+                            zip_ref.extractall("data/")
+                            logger.info(f"✅ Extracted mission data from zip")
+                    else:
+                        logger.warning("⚠️ No mission data to process")
+                        
+                except Exception as e:
+                    logger.error(f"❌ Failed to process mission data: {e}")
                     
         except Exception as e:
             logger.error(f"❌ Server call failed: {e}")

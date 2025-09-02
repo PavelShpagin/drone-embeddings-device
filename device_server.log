@@ -1,0 +1,319 @@
+INFO:     Started server process [1249283]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+Starting Drone Device Server...
+Access the web interface at: http://localhost:8888
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37348 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42956 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42956 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42956 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42956 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42956 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/progress HTTP/1.1" 200 OK
+INFO:__main__:=== WEBSOCKET ABORT INITIATED ===
+INFO:__main__:✗ No active WebSocket to abort
+INFO:     127.0.0.1:58604 - "POST /api/abort_websocket HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "POST /api/init_map HTTP/1.1" 200 OK
+INFO:__main__:🚀 Starting mission: 50.544661, 30.77387, 15.0km
+INFO:src.device.websocket_client:🔌 Connecting to WebSocket: ws://localhost:5000/ws/c2960b6b-5198-4fea-ab0c-69c6b3cc5f17
+INFO:__main__:=== ABORT OPERATION INITIATED ===
+INFO:__main__:✓ Set cancelled status for init_map
+INFO:__main__:=== WEBSOCKET ABORT INITIATED ===
+INFO:__main__:✗ No active WebSocket to abort
+INFO:     127.0.0.1:58604 - "POST /api/abort_websocket HTTP/1.1" 200 OK
+ERROR:src.device.websocket_client:❌ WebSocket connection failed: [Errno 111] Connection refused
+INFO:__main__:✅ Server call completed: success=False
+WARNING:__main__:⚠️ WebSocket failed, checking for completed session on server...
+WARNING:__main__:⚠️ Could not check for completed sessions: cannot access local variable 'requests' where it is not associated with a value
+ERROR:__main__:❌ No valid session found
+INFO:__main__:✓ TRANSACTION COMPLETED: State updated atomically for session 
+INFO:__main__:=== ABORT OPERATION INITIATED ===
+INFO:__main__:✓ Set cancelled status for init_map
+INFO:__main__:No active WebSocket task to cancel
+INFO:__main__:Active local tasks to cancel: ['init_map']
+INFO:__main__:✓ Cancelled local task: init_map
+INFO:__main__:=== ABORT OPERATION COMPLETED ===
+INFO:     127.0.0.1:40314 - "POST /api/abort HTTP/1.1" 200 OK
+INFO:__main__:✗ TRANSACTION CANCELLED: Init map task cab6b1a6-4ee2-4206-a036-4b5c911f79f4 was cancelled by user
+INFO:__main__:✓ STATE ROLLBACK: Restoring original state
+INFO:__main__:✓ CLEANUP: Removing any partial data files from cancelled operation
+INFO:__main__:No active WebSocket task to cancel
+INFO:__main__:Active local tasks to cancel: ['init_map']
+INFO:__main__:✓ Cancelled local task: init_map
+INFO:__main__:=== ABORT OPERATION COMPLETED ===
+INFO:     127.0.0.1:58604 - "POST /api/abort HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40314 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/progress HTTP/1.1" 200 OK
+INFO:__main__:=== WEBSOCKET ABORT INITIATED ===
+INFO:__main__:✗ No active WebSocket to abort
+INFO:     127.0.0.1:40322 - "POST /api/abort_websocket HTTP/1.1" 200 OK
+INFO:__main__:=== WEBSOCKET ABORT INITIATED ===
+INFO:__main__:✗ No active WebSocket to abort
+INFO:     127.0.0.1:58604 - "POST /api/abort_websocket HTTP/1.1" 200 OK
+INFO:__main__:=== ABORT OPERATION INITIATED ===
+INFO:__main__:✓ Set cancelled status for init_map
+INFO:__main__:=== ABORT OPERATION INITIATED ===
+INFO:__main__:✓ Set cancelled status for init_map
+INFO:__main__:No active WebSocket task to cancel
+INFO:__main__:Active local tasks to cancel: ['init_map']
+INFO:__main__:✓ Local task already done: init_map
+INFO:__main__:=== ABORT OPERATION COMPLETED ===
+INFO:     127.0.0.1:58604 - "POST /api/abort HTTP/1.1" 200 OK
+INFO:__main__:No active WebSocket task to cancel
+INFO:__main__:Active local tasks to cancel: ['init_map']
+INFO:__main__:✓ Local task already done: init_map
+INFO:__main__:=== ABORT OPERATION COMPLETED ===
+INFO:     127.0.0.1:40322 - "POST /api/abort HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50770 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "POST /api/init_map HTTP/1.1" 200 OK
+INFO:__main__:🚀 Starting mission: 50.45, 30.52, 2.0km
+INFO:src.device.websocket_client:🔌 Connecting to WebSocket: ws://localhost:5000/ws/367ae5bf-3d72-4770-ade2-f6d4a4b0f0be
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+ERROR:src.device.websocket_client:❌ WebSocket connection failed: [Errno 111] Connection refused
+INFO:__main__:✅ Server call completed: success=False
+WARNING:__main__:⚠️ WebSocket failed, checking for completed session on server...
+WARNING:__main__:⚠️ Could not check for completed sessions: cannot access local variable 'requests' where it is not associated with a value
+ERROR:__main__:❌ No valid session found
+INFO:__main__:✓ TRANSACTION COMPLETED: State updated atomically for session 
+INFO:     127.0.0.1:40322 - "GET /api/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:__main__:📦 Processing mission data for session oei7nx4o
+INFO:__main__:✅ Extracted mission data from zip
+INFO:__main__:📁 Moved map.png to maps/
+INFO:__main__:📁 Moved embeddings.json to embeddings/
+INFO:__main__:✅ Mission data processed and state updated for session oei7nx4o
+INFO:     127.0.0.1:40322 - "POST /api/process_mission_data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/progress HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/progress HTTP/1.1" 200 OK
+INFO:__main__:=== WEBSOCKET ABORT INITIATED ===
+INFO:__main__:✗ No active WebSocket to abort
+INFO:     127.0.0.1:40322 - "POST /api/abort_websocket HTTP/1.1" 200 OK
+INFO:__main__:=== WEBSOCKET ABORT INITIATED ===
+INFO:__main__:✗ No active WebSocket to abort
+INFO:     127.0.0.1:58604 - "POST /api/abort_websocket HTTP/1.1" 200 OK
+INFO:__main__:=== ABORT OPERATION INITIATED ===
+INFO:__main__:=== ABORT OPERATION INITIATED ===
+INFO:__main__:No active WebSocket task to cancel
+INFO:__main__:Active local tasks to cancel: ['init_map']
+INFO:__main__:✓ Local task already done: init_map
+INFO:__main__:=== ABORT OPERATION COMPLETED ===
+INFO:     127.0.0.1:40322 - "POST /api/abort HTTP/1.1" 200 OK
+INFO:__main__:No active WebSocket task to cancel
+INFO:__main__:Active local tasks to cancel: ['init_map']
+INFO:__main__:✓ Local task already done: init_map
+INFO:__main__:=== ABORT OPERATION COMPLETED ===
+INFO:     127.0.0.1:58604 - "POST /api/abort HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /api/state HTTP/1.1" 200 OK
+INFO:__main__:📦 Processing mission data for session dgyrpg3f
+INFO:__main__:✅ Extracted mission data from zip
+INFO:__main__:📁 Moved map.png to maps/
+INFO:__main__:📁 Moved embeddings.json to embeddings/
+INFO:__main__:✅ Mission data processed and state updated for session dgyrpg3f
+INFO:     127.0.0.1:58604 - "POST /api/process_mission_data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40322 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1249283]

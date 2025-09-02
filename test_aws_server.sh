@@ -74,9 +74,12 @@ wait_for_aws_server() {
 # Start AWS server
 echo "☁️  Starting AWS server..."
 cd "$SERVER_DIR"
+echo "📝 Starting server with logging to ../logs/aws_server.log"
+echo "🔍 Command: python server.py"
 python server.py > ../logs/aws_server.log 2>&1 &
 AWS_SERVER_PID=$!
 cd - > /dev/null
+echo "📋 AWS Server PID: $AWS_SERVER_PID"
 
 # Wait for AWS server to be ready
 if wait_for_aws_server; then
@@ -109,6 +112,13 @@ if wait_for_aws_server; then
     echo "   • Device server: ../logs/device_server.log"
     echo ""
     echo "🛑 Press Ctrl+C to stop AWS server"
+    echo ""
+    
+    # Monitor server logs in real-time
+    echo "📊 Monitoring server logs (last 10 lines):"
+    tail -n 10 ../logs/aws_server.log 2>/dev/null || echo "   No logs yet..."
+    echo ""
+    echo "🔍 To monitor logs in real-time: tail -f ../logs/aws_server.log"
     echo ""
     
     # Keep script running and wait for interruption

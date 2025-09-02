@@ -116,14 +116,24 @@ class CleanWebSocketClient:
                     
                     # Check for completion status (can be in any message type)
                     status = data.get("status")
-                    if status == "completed":
+                    if status == "completed" or status == "complete":
                         logger.info(f"🎉 Task completed! Session: {data.get('session_id')}")
-                        return {
+                        result = {
                             "success": True,
-                            "zip_data": data.get("zip_data"),
                             "session_id": data.get("session_id"),
                             "message": data.get("message", "Mission completed successfully")
                         }
+                        
+                        # Handle both zip_data (small files) and download_url (large files)
+                        if data.get("zip_data"):
+                            result["zip_data"] = data.get("zip_data")
+                            logger.info("✅ Received zip_data directly")
+                        elif data.get("download_url"):
+                            result["download_url"] = data.get("download_url")
+                            result["zip_size"] = data.get("zip_size")
+                            logger.info(f"✅ Received download_url: {data.get('download_url')}")
+                        
+                        return result
                     elif status == "error":
                         logger.error(f"❌ Task failed: {data.get('message')}")
                         return {
